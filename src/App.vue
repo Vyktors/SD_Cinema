@@ -1,11 +1,20 @@
 <template>
   <div id="nav">
-    <router-link to="/">Acceuil</router-link> |
-    <router-link to="/information">Information</router-link> |
-    <router-link to="/films">Films</router-link>
+    <MenuPrincipal></MenuPrincipal>
   </div>
   <router-view/>
 </template>
+
+<script>
+import MenuPrincipal from './components/Section/MenuPrincipal.vue';
+
+export default {
+  name: 'App',
+  components: {
+    MenuPrincipal}
+}
+</script>
+
 
 <style>
 #app {
