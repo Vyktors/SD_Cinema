@@ -20,6 +20,7 @@
 <style scoped>
     .ccTile {
         position:relative;
+        margin:0 1rem;
     }
     .ccImg {
 

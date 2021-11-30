@@ -21,7 +21,7 @@
             <h2>- Tarif reduit -</h2>
         </div>
         <div class="container">
-            <TableauTarifExtra />
+            <ListeItem />
         </div>
     </div>
 
@@ -40,6 +40,9 @@
         <div class="title">
             <h2>- Nourriture -</h2>
         </div>
+        <div class="container">
+            <ListeItem />
+        </div>
     </div>
 
     <!--COVID-19-->
@@ -53,14 +56,14 @@
 
 <script>
     import TableauTarif from '@/components/section/TableauTarif.vue';
-    import TableauTarifExtra from '@/components/section/TableauTarifExtra.vue';
+    import ListeItem from '@/components/section/ListeItem.vue';
     import CarteCadeaux from '@/components/section/CarteCadeaux.vue';
 
     export default {
         name: 'Information',
         components: {
             TableauTarif,
-            TableauTarifExtra,
+            ListeItem,
             CarteCadeaux
         },
 }

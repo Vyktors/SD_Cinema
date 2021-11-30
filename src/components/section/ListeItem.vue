@@ -1,17 +1,17 @@
 <template>
     <div class="tabExtra">
-        <TileTarifExtra />
-        <TileTarifExtra />
-        <TileTarifExtra />
+        <Item />
+        <Item />
+        <Item />
     </div>
 </template>
 
 <script>
-    import TileTarifExtra from "@/components/section/TileTarifExtra.vue"
+    import Item from "@/components/section/Item.vue"
     export default {
-        name: 'TableauTarifExtra',
+        name: 'ListeItem',
         components: {
-            TileTarifExtra,
+            Item,
         }
     }
 </script>
