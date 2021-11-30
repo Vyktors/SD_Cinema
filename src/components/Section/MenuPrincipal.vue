@@ -14,7 +14,7 @@
                     <router-link to="/information#nourritture" class="bar-item">NOURRITTURE</router-link>
                     <router-link to="/information#carte-cadeau" class="bar-item">CARTE CADEAU</router-link>
                     <router-link to="/information#covid-19" class="bar-item">COVID-19</router-link>
-</div>
+                </div>
             </div>
         </div>
     </div>
