@@ -1,17 +1,17 @@
 <template>
     <div class="tab">
-        <TableauTarifTile />
-        <TableauTarifTile />
-        <TableauTarifTile />
+        <TileTarif />
+        <TileTarif />
+        <TileTarif />
     </div>
 </template>
 
 <script>
-    import TableauTarifTile from "@/components/section/TableauTarifTile.vue"
+    import TileTarif from "@/components/section/TileTarif.vue"
     export default {
         name: 'TableauTarif',
         components: {
-            TableauTarifTile,
+            TileTarif,
         }
     }
 </script>
@@ -21,6 +21,5 @@
     .tab {
         display:flex;
         justify-content: center;
-
     }
 </style>

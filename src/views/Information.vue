@@ -7,25 +7,42 @@
             Vous trouverez ci-dessous toutes les informations pour votre aventure!
         </div>
     </div>
+
+    <!--BILLETERIE-->
     <div id="billetterie" class="contFull odd">
         <div class="title">
             <h2>- Billeterie -</h2>
         </div>
-        <div class="billetterieContainer">
-            <div class="tabTarif"><TableauTarif/></div>
+        <div class="container">
+            <TableauTarif />
         </div>
-        
+
+        <div class="title">
+            <h2>- Tarif reduit -</h2>
+        </div>
+        <div class="container">
+            <TableauTarifExtra />
+        </div>
     </div>
+
+    <!--CARTE CADEAU-->
     <div id="carte-cadeau" class="contFull">
         <div class="title">
             <h2>- Carte cadeau -</h2>
         </div>
+        <div class="container">
+            <CarteCadeaux/>
+        </div>
     </div>
+
+    <!--NOURRITURE-->
     <div id="nourriture" class="contFull odd">
         <div class="title">
             <h2>- Nourriture -</h2>
         </div>
     </div>
+
+    <!--COVID-19-->
     <div id="covid-19" class="contFull">
         <div class="title">
             <h2>- Covid-19 -</h2>
@@ -36,11 +53,15 @@
 
 <script>
     import TableauTarif from '@/components/section/TableauTarif.vue';
+    import TableauTarifExtra from '@/components/section/TableauTarifExtra.vue';
+    import CarteCadeaux from '@/components/section/CarteCadeaux.vue';
 
     export default {
         name: 'Information',
         components: {
-            TableauTarif
+            TableauTarif,
+            TableauTarifExtra,
+            CarteCadeaux
         },
 }
 </script>
@@ -77,14 +98,11 @@
         display: flex;
         justify-content:center;
         padding-bottom:2rem;
+        font-size:16px;
     }
 
-    .billetterieContainer {
+    .container {
         width:1440px;
-        border:2px red solid;
-    }
-
-    .tabTarif {
-        width:100%;
+        min-height:50px;
     }
 </style>
