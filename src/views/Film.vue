@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import RangeeHoraire from '@/components/Section/RangeeHoraire';
+import RangeeHoraire from '@/components/section/RangeeHoraire';
 
 export default {
     name: 'Film',
