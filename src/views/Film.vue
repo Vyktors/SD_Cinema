@@ -84,10 +84,6 @@ export default {
     margin-right: 20px;
 }
 
-.film__titre {
-
-}
-
 .film__icon {
     width: 32px;
     height: 32px;
@@ -117,6 +113,18 @@ export default {
 
 .film__icon-container {
     margin-right: 5px;
+}
+
+@media (max-width:800px) {
+    .film__apropos {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .film__description {
+        margin-left: auto;
+    }
 }
 
 </style>
