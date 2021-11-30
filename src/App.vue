@@ -3,16 +3,19 @@
           rel="stylesheet">
     <MenuPrincipal />
     <router-view />
+    <Footer/>
 </template>
 
 
 <script>
-    import MenuPrincipal from "@/components/Section/MenuPrincipal.vue";
+    import MenuPrincipal from "@/components/section/MenuPrincipal.vue";
+    import Footer from "@/components/section/Footer.vue";
 
     export default {
         name: "app",
         components: {
-            MenuPrincipal
+            MenuPrincipal,
+            Footer
         }
     };
 </script>
