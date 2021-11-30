@@ -24,7 +24,7 @@
                     <!-- duree -->
                     <div class="film__duree-container">
                         <div class="film__icon-container">
-                            <img src="@/assets/chronometre.png" alt="icone durée" class="film__icon"/>
+                            <i class="material-icons">timer</i>
                         </div>
                         <div class="film__duree">
                             Duree du film
@@ -34,7 +34,7 @@
                     <!-- Realisateur -->
                     <div class="film__realisateur-container">
                         <div class="film__icon-container">
-                            <img src="@/assets/realisateur.png" alt="icone réalisateur" class="film__icon"/>
+                            <i class="material-icons">chair</i>
                         </div>
                         <div class="film__realisateur">
                             Nom du realisateur
@@ -45,7 +45,7 @@
                 <!-- Acteur -->
                 <div class="film__acteur-container">
                     <div class="film__icon-container">
-                        <img src="@/assets/groupe.png" alt="icone acteur" class="film__icon"/>
+                        <i class="material-icons">groups</i>    
                     </div>
                     <div class="film__acteur">
                         Nom des acteurs
@@ -77,6 +77,7 @@ export default {
 .film__apropos {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .film__affiche {
     width: 350px;
