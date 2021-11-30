@@ -11,7 +11,7 @@
                 </button>
                 <div class="dropdown-content">
                     <router-link to="/information#billeterie" class="bar-item">BILLETERIE</router-link>
-                    <router-link to="/information#nourritture" class="bar-item">NOURRITTURE</router-link>
+                    <router-link to="/information#nourriture" class="bar-item">NOURRITURE</router-link>
                     <router-link to="/information#carte-cadeau" class="bar-item">CARTE CADEAU</router-link>
                     <router-link to="/information#covid-19" class="bar-item">COVID-19</router-link>
                 </div>
@@ -74,7 +74,6 @@ export default {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        font-family: 'Sora';
         font-size: 16px;
         height: 100%;
         width: 100%;
