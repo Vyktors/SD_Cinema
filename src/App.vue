@@ -1,31 +1,71 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Acceuil</router-link> |
-    <router-link to="/information">Information</router-link> |
-    <router-link to="/films">Films</router-link>
-  </div>
-  <router-view/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <MenuPrincipal />
+    <router-view />
 </template>
 
+
+<script>
+    import MenuPrincipal from "@/components/section/MenuPrincipal.vue";
+
+    export default {
+        name: "app",
+        components: {
+            MenuPrincipal
+        }
+    };
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
+    /*TODO*/
+    @font-face {
+        font-family: 'Sora';
+        src: url(/style/font/Sora/static/Sora-Regular.ttf);
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    @font-face {
+        font-family: 'Sora-bold';
+        src: url(/style/font/Sora/static/Sora-Bold.ttf);
+        font-weight: bold;
+    }
+    /*ENDTODO*/
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+
+    body,
+    button {
+        font-family: 'Sora', sans-serif;
+    }
+
+    html,
+    body,
+    div {
+        margin: 0;
+        padding: 0;
+        color:white;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    body {
+        background-color: rgb(29, 29, 29);
+    }
+
+    button {
+        border: none;
+        display: inline-block;
+        padding: 8 px 16 px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background-color: inherit;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
 </style>
