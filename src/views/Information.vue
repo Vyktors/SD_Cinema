@@ -140,13 +140,15 @@
     }
 
     .container {
-        width:1440px;
+        max-width:1440px;
         min-height:50px;
     }
 
     .tabCovid {
         display: flex;
-        justify-content:center;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .tileCovid {

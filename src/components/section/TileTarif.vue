@@ -19,7 +19,7 @@
         width:300px;
         height:120px;
         border:grey 1px solid;
-        margin: 0 1rem;
+        margin: 0 1rem 1rem;
     }
     .tileTop {
         height: 40%;
