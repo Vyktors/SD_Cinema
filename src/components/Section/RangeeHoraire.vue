@@ -51,7 +51,6 @@ export default{
     },
     data() {
         return {
-            listeDate: ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi'],
             listeHoraire: [
                 [
                     '10:30',
@@ -69,9 +68,32 @@ export default{
                 [
                     '10:30',
                 ],
+                [
+                    '10:30',
+                ],
+                [
+                    '10:30',
+                ],
             ]
         }
     },
+
+    computed: {
+        /**
+         *  retourne la liste des 7 prochains jours, aujourd'hui inclus
+         */
+        listeDate(){
+            let resultat = []
+            let dateActuelle = new Date()
+            let date = new Date()
+            for( let i = 0; i < 7; i++) {
+                date.setDate(dateActuelle.getDate() + i)
+                let dateString = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
+                resultat.push(dateString)
+            }
+            return resultat
+        }
+    }
 }
 </script>
 
