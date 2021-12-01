@@ -1,6 +1,5 @@
 <template>
-    <div class="ccTile">
-        
+    <div class="ccTile">      
         <img class="ccImg" src="https://via.placeholder.com/300x150" alt="Girl in a jacket">
         <div class="ccNom"> Programme Cadeau </div>
         <div class="ccPrix">80$</div>
@@ -23,7 +22,8 @@
         margin:0 1rem;
     }
     .ccImg {
-
+        height:150px;
+        width:300px;
     }
     .ccNom {
         height: 75px;

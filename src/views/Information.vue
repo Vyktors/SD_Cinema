@@ -9,9 +9,9 @@
     </div>
 
     <!--BILLETERIE-->
-    <div id="billetterie" class="contFull odd">
+    <div class="contFull odd">
         <div class="title">
-            <h2>- Billeterie -</h2>
+            <h2 id="billetterie">- Billeterie -</h2>
         </div>
         <div class="container">
             <TableauTarif />
@@ -26,9 +26,9 @@
     </div>
 
     <!--CARTE CADEAU-->
-    <div id="carte-cadeau" class="contFull">
+    <div class="contFull">
         <div class="title">
-            <h2>- Carte cadeau -</h2>
+            <h2 id="carte-cadeau">- Carte cadeau -</h2>
         </div>
         <div class="container">
             <CarteCadeaux/>
@@ -36,9 +36,9 @@
     </div>
 
     <!--NOURRITURE-->
-    <div id="nourriture" class="contFull odd">
+    <div class="contFull odd">
         <div class="title">
-            <h2>- Nourriture -</h2>
+            <h2 id="nourriture">- Nourriture -</h2>
         </div>
         <div class="container">
             <ListeItem />
@@ -46,9 +46,9 @@
     </div>
 
     <!--COVID-19-->
-    <div id="covid-19" class="contFull">
+    <div class="contFull">
         <div class="title">
-            <h2>- Covid-19 -</h2>
+            <h2 id="covid-19">- Covid-19 -</h2>
         </div>
     </div>
 
