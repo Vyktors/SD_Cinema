@@ -50,6 +50,25 @@
         <div class="title">
             <h2 id="covid-19">- Covid-19 -</h2>
         </div>
+        <div class="container">
+            <div class="tabCovid">
+                <div class="tileCovid">
+                    <div class="imgCovid imgMasque"></div>
+                    <div class="titleCovid"> Port du masque </div>
+                    <div class="descCovid">Le port du masque est obligatoire lorsque vous n'êtes pas assis </div>
+                </div>
+                <div class="tileCovid">
+                    <div class="imgCovid imgPassport"></div>
+                    <div class="titleCovid"> Passeport vaccinale </div>
+                    <div class="descCovid">Passeport vaccinale obligatoire a l'entree</div>
+                </div>
+                <div class="tileCovid">
+                    <div class="imgCovid imgDistance"></div>
+                    <div class="titleCovid"> Distanciation </div>
+                    <div class="descCovid">Respecter la distanciation de 2 metres entre bulle</div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </template>
@@ -107,5 +126,54 @@
     .container {
         width:1440px;
         min-height:50px;
+    }
+
+    .tabCovid {
+        display: flex;
+        justify-content:center;
+    }
+
+    .tileCovid {
+        margin: 0 1rem;
+        min-width: 200px;
+        width: 300px;
+        margin-bottom:1rem;
+    }
+
+    .imgCovid {
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size: contain;
+        height:100%;
+        height: 150px;
+        width: 300px;
+    }
+
+    .imgMasque {
+        background-image: url(/icons/portmasque.png);
+    }
+
+    .imgPassport {
+        background-image: url(/icons/passVax.png);
+    }
+
+    .imgDistance {
+        background-image: url(/icons/distance.png);
+    }
+
+    .titleCovid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        padding: 1rem 0;
+    }
+
+    .descCovid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        text-align:center;
     }
 </style>
