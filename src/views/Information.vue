@@ -90,7 +90,7 @@
         data() {
             return {
                 bouffe: [],
-                charged: false;
+                charged: false
             }
         },
         created() {
