@@ -1,7 +1,7 @@
 <template>
     <div class="tileExtra">
-        <div class="tileExtraLeft">Pour le mardi</div>
-        <div class="tileExtraRight">07$</div>
+        <div class="tileExtraLeft">{{ nom }}</div>
+        <div class="tileExtraRight">{{prix}}</div>
         
     </div>
 </template>
@@ -9,6 +9,10 @@
 <script>
     export default {
         name: 'Item',
+        props: {
+            prix: Number,
+            nom: String
+        }
     }
 </script>
 

@@ -1,8 +1,9 @@
 <template>
     <div class="tabExtra">
-        <Item />
-        <Item />
-        <Item />
+        <Item v-for="(item,index) in list"
+              v-bind:key="index"
+              :nom="item.nom"
+              :prix="item.prix"/>
     </div>
 </template>
 
@@ -12,6 +13,9 @@
         name: 'ListeItem',
         components: {
             Item,
+        },
+        props: {
+            list: Array,
         }
     }
 </script>

@@ -41,7 +41,7 @@
             <h2 id="nourriture">- Nourriture -</h2>
         </div>
         <div class="container">
-            <ListeItem />
+            <ListeItem :list="bouffe" />
         </div>
     </div>
 
@@ -74,6 +74,8 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     import TableauTarif from '@/components/section/TableauTarif.vue';
     import ListeItem from '@/components/section/ListeItem.vue';
     import CarteCadeaux from '@/components/section/CarteCadeaux.vue';
@@ -85,6 +87,20 @@
             ListeItem,
             CarteCadeaux
         },
+        data() {
+            return {
+                bouffe: [],
+                charged: false;
+            }
+        },
+        created() {
+            axios
+                .get('http://127.0.0.1:3333/') //Need good ENDPOINT Pour la bouffe
+                .then(response => {
+                    (this.bouffe = response.data)
+                    this.charged = true
+                })
+        }
 }
 </script>
 
