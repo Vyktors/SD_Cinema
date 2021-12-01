@@ -13,7 +13,6 @@
         name: 'CarteCadeaux',
         components: {
             CCTile,
-
         }
     }
 </script>

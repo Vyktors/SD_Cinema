@@ -1,8 +1,7 @@
 <template>
     <div class="tileExtra">
         <div class="tileExtraLeft">{{ nom }}</div>
-        <div class="tileExtraRight">{{prix}}</div>
-        
+        <div class="tileExtraRight">{{ prix }}</div>
     </div>
 </template>
 
