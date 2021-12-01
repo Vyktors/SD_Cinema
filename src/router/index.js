@@ -7,29 +7,39 @@ import Films from '../views/Films.vue'
 const routes = [
   {
     path: '/',
-    name: 'Accueil',
+    name: 'accueil',
     component: Accueil
   },
   {
     path: '/information',
-    name: 'Information',
+    name: 'information',
     component: Information
   },
   {
     path: '/film/:id',
-    name: 'Film',
+    name: 'film',
     component: Film
   },
   {
     path: '/films',
-    name: 'Films',
+    name: 'films',
     component: Films
   },
 ]
 
+
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
+    //DOESNT WORK :( TODO
+    scrollBehavior(to) {
+        if (to.hash) {
+            return {
+                selector: to.hash,
+                behavior: 'smooth',
+            }
+        }
+    }
 })
 
 export default router
