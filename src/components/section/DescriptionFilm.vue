@@ -54,7 +54,10 @@
             </div>
         </div>
         <div class="film__horaire">
-            <RangeeHoraire />
+            <RangeeHoraire
+                :overflowx="true"
+                :show-date="true"
+            />
         </div>
     </div>
 </template>
@@ -101,6 +104,8 @@
 
     .film__resume {
         max-width: 750px;
+        min-width: 600px;
+        min-height: 100px;
         margin-bottom: 20px;
         text-align: left;
     }
@@ -114,11 +119,19 @@
     }
 
     .film__realisateur-container {
+        margin-right: 10px;
         margin-left: auto;
     }
 
     .film__icon-container {
         margin-right: 5px;
+    }
+
+    .film__horaire {
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     @media (max-width:800px) {
