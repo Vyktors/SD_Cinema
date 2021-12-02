@@ -1,8 +1,10 @@
 <template>
     <div class="tab">
-        <TileTarif />
-        <TileTarif />
-        <TileTarif />
+        <TileTarif 
+            v-for="(item,index) in list"
+            v-bind:key="index"
+            :nom="item.nom"
+            :prix="item.prix" />
     </div>
 </template>
 
@@ -12,6 +14,9 @@
         name: 'TableauTarif',
         components: {
             TileTarif,
+        },
+        props: {
+            list : Array
         }
     }
 </script>

@@ -1,13 +1,17 @@
 <template>
     <div class="tile">
-        <div class="tileTop">Nom du groupe de tarif</div>
-        <div class="tileBot">50$</div>
+        <div class="tileTop">{{ nom }}</div>
+        <div class="tileBot">{{ prix }} $</div>
     </div>
 </template>
 
 <script>
     export default {
         name: 'TileTarif',
+        props: {
+            nom: String,
+            prix: Number
+        }
     }
 </script>
 

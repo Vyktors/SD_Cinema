@@ -14,14 +14,14 @@
             <h2 id="billetterie">- Billeterie -</h2>
         </div>
         <div class="container">
-            <TableauTarif />
+            <TableauTarif :list="billets.main"/>
         </div>
 
         <div class="title">
             <h2>- Tarif reduit -</h2>
         </div>
         <div class="container">
-            <ListeItem />
+            <ListeItem :list="billets.extra"/>
         </div>
     </div>
 
@@ -90,6 +90,7 @@
         data() {
             return {
                 bouffe: [],
+                billets: [],
                 charged: false
             }
         },
@@ -98,6 +99,14 @@
                 .get('http://127.0.0.1:3333/') //Need good ENDPOINT Pour la bouffe
                 .then(response => {
                     (this.bouffe = response.data)
+                    this.charged = true
+                })
+
+            //ENDPOINTS Tarifs
+            axios
+                .get('http://127.0.0.1:3333/billets') 
+                .then(response => {
+                    this.billets = response.data
                     this.charged = true
                 })
         }
@@ -143,6 +152,7 @@
     .container {
         max-width:1440px;
         min-height:50px;
+        width:100%;
     }
 
     .tabCovid {
