@@ -3,7 +3,10 @@
     :class="{ 'overflowx': overflowx }">
         <table>
             <!-- liste date -->
-            <tr class="liste-date">
+            <tr 
+                v-if="showDate"
+                class="liste-date"
+            >
                 <!-- on skip la cellule en dessus de l'image-->
                 <th></th>
 
@@ -70,7 +73,12 @@ export default{
          */
         overflowx: {
             type: Boolean,
-            default: false
+            default: false,
+        },
+
+        showDate: {
+            type: Boolean,
+            default: false,
         }
     },
     data() {
