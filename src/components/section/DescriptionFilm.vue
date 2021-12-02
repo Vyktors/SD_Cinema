@@ -54,7 +54,9 @@
             </div>
         </div>
         <div class="film__horaire">
-            <RangeeHoraire />
+            <RangeeHoraire
+                :overflowx="true"
+            />
         </div>
     </div>
 </template>

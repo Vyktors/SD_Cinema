@@ -1,43 +1,59 @@
 <template>
-    <table class="rangee-horaire__liste">
-        <!-- liste date -->
-        <tr class="rangee-horaire__liste-date">
-            <th class="rangee-horaire__vide"></th>
-            <th
-                v-for="date in listeDate"
-                :key="date"
-                class="rangee-horaire__date"
-            >
-                {{ date }}
-            </th>
-        </tr>
-        <tr class="rangee-horaire__liste-horaire">
+    <div class="container"
+    :class="{ 'overflowx': overflowx }">
+        <table>
+            <!-- liste date -->
+            <tr class="liste-date">
+                <!-- on skip la cellule en dessus de l'image-->
+                <th></th>
 
-            <td><img src="@/assets/affiche-film.jpg" alt="Affiche du film" class="rangee-horaire__affiche" /></td>
-            
-            <!-- liste des horaires -->
-            <td
-                v-for="journalier in listeHoraire" :key="journalier"
-                class="rangee-horaire__horaire-journalier-liste">
-                <div v-if="journalier.length > 0">
-                    <ul class="rangee-horaire__horaire-journalier">
-                        <li
-                            v-for="horaire in journalier" :key="horaire"
-                            class="rangee-horaire__heure"
-                        >
-                            {{ horaire }}
-                        </li>
-                    </ul>
-                </div>
-                <div
-                    v-else
-                    class="rangee-horaire__horaire-journalier"
+                <th
+                    v-for="date, index in listeDate"
+                    :key="date"
+                    class="date-container"
                 >
-                    <i class="material-icons rangee-horaire__no-horaire">hide_source</i>
-                </div>
-            </td>
-        </tr>
-    </table>
+                    <div
+                        class="date"
+                        :class="{ 'highlight': index == 0}"
+                    >
+                        {{ date }}
+                    </div>
+                </th>
+            </tr>
+            <tr class="ligne-liste-horaire">
+
+                <td><img src="@/assets/affiche-film.jpg" alt="Affiche du film" class="affiche" /></td>
+                
+                <!-- liste des horaires -->
+                <td
+                    v-for="journalier, index in listeHoraire" :key="journalier"
+                    class="film-horaire-container">
+                    <div
+                        v-if="journalier.length > 0"
+                        class="liste-heure-container"
+                        :class="{ 'highlight': index == 0}"
+                    >
+                        <ul class="horaire-journalier">
+                            <li
+                                v-for="horaire in journalier" :key="horaire"
+                                class="heure-container"
+                            >
+                                <div>
+                                    {{ horaire }}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        v-else
+                        class="liste-heure-container liste-vide"
+                    >
+                        <i class="material-icons rangee-horaire__no-horaire">hide_source</i>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </template>
 
 <script>
@@ -48,6 +64,14 @@ export default{
         idFilm: {
             type: Number,
         },
+
+        /**
+         * si true, on pourrait scroller horizontalement le tableau
+         */
+        overflowx: {
+            type: Boolean,
+            default: false
+        }
     },
     data() {
         return {
@@ -69,10 +93,11 @@ export default{
                     '10:30',
                 ],
                 [
+                    '07:30',
                     '10:30',
+                    '18:00',
                 ],
                 [
-                    '10:30',
                 ],
             ]
         }
@@ -98,31 +123,41 @@ export default{
 </script>
 
 <style scoped>
-.rangee-horaire__affiche{
+.overflowx{
+    overflow-x: auto;
+}
+.affiche,
+.film-horaire-container {
     width: 150px;
     height: 200px;
 }
 
-.rangee-horaire__date{
-    min-width: 150px;
-}
-
-.rangee-horaire__horaire-journalier-container:first-of-type {
-    border-style: solid;
-    border-color: #fece00;
-}
-
-.rangee-horaire__horaire-journalier{
-    border-style: solid;
-    border-color: white;
-    margin-left: 5px;
-    border-radius: 5px;
-    height: 200px;
-}
-
-.rangee-horaire__no-horaire{
+.date {
+    width: 150px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.affiche,
+.date,
+.liste-heure-container {
+    border: solid 2px white;
+    border-radius: 5px;
+}
+
+.liste-heure-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.liste-vide {
+    justify-content: center;
+}
+
+.highlight {
+    border: solid 2px #fece00;
 }
 </style>
