@@ -135,8 +135,9 @@
     .textHeader{
         display: flex;
         justify-content:center;
-        padding-bottom:2rem;
+        padding:0 2rem 2rem;
         font-size:16px;
+        text-align:center;
     }
 
     .container {
@@ -148,14 +149,13 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        align-items: center;
     }
 
     .tileCovid {
         margin: 0 1rem;
         min-width: 200px;
         width: 300px;
-        margin-bottom:1rem;
+        margin-bottom:2rem;
     }
 
     .imgCovid {
