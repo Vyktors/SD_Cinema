@@ -1,16 +1,18 @@
 <template>
     <div class="ccTile">      
-        <img class="ccImg" src="https://via.placeholder.com/300x150" alt="Girl in a jacket">
-        <div class="ccNom"> Programme Cadeau </div>
-        <div class="ccPrix">80$</div>
+        <img class="ccImg" :src="'${ img }'">
+        <div class="ccNom"> {{ nom }} </div>
+        <div class="ccPrix">{{ prix }} $</div>
     </div>
 </template>
 
 <script>
     export default {
         name: 'CCTile',
-        components: {
-
+        props: {
+            nom: String,
+            prix: Number,
+            img : String
         }
     }
 </script>

@@ -31,7 +31,7 @@
             <h2 id="carte-cadeau">- Carte cadeau -</h2>
         </div>
         <div class="container">
-            <CarteCadeaux/>
+            <CarteCadeaux :cadeaux="cadeaux"/>
         </div>
     </div>
 
@@ -91,12 +91,13 @@
             return {
                 bouffe: [],
                 billets: [],
+                cadeaux: [],
                 charged: false
             }
         },
         created() {
             axios
-                .get('http://127.0.0.1:3333/') //Need good ENDPOINT Pour la bouffe
+                .get('http://127.0.0.1:3333/nourriture') //Need good ENDPOINT Pour la bouffe
                 .then(response => {
                     (this.bouffe = response.data)
                     this.charged = true
@@ -107,6 +108,14 @@
                 .get('http://127.0.0.1:3333/billets') 
                 .then(response => {
                     this.billets = response.data
+                    this.charged = true
+                })
+
+            //ENDPOINTS Cadeaux
+            axios
+                .get('http://127.0.0.1:3333/cadeau')
+                .then(response => {
+                    this.cadeaux = response.data
                     this.charged = true
                 })
         }

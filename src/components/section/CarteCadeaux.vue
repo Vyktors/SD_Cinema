@@ -1,8 +1,11 @@
 <template>
     <div class="tabCad">
-        <CCTile />
-        <CCTile />
-        <CCTile />
+        <CCTile 
+            v-for="(item,index) in cadeaux"
+            v-bind:key="index"
+            :nom="item.nom"
+            :prix="item.prix"
+            />
     </div>
 </template>
 
@@ -13,7 +16,10 @@
         name: 'CarteCadeaux',
         components: {
             CCTile,
-        }
+        },
+        props: {
+            cadeaux : Array
+        },
     }
 </script>
 
