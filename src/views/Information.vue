@@ -18,7 +18,7 @@
         </div>
 
         <div class="title">
-            <h2>- Tarif reduit -</h2>
+            <h2>- Tarifs speciaux -</h2>
         </div>
         <div class="container">
             <ListeItem :list="billets.extra"/>
