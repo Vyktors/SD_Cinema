@@ -92,15 +92,20 @@
                 bouffe: [],
                 billets: [],
                 cadeaux: [],
+                checkNourriture: false,
+                checkBillets: false,
+                checkCadeaux: false,
                 charged: false
             }
         },
         created() {
+
+            //ENDPOINTS Nourriture
             axios
-                .get('http://127.0.0.1:3333/nourriture') //Need good ENDPOINT Pour la bouffe
+                .get('http://127.0.0.1:3333/nourriture') 
                 .then(response => {
                     (this.bouffe = response.data)
-                    this.charged = true
+                    this.checkNourriture = true
                 })
 
             //ENDPOINTS Tarifs
@@ -108,7 +113,7 @@
                 .get('http://127.0.0.1:3333/billets') 
                 .then(response => {
                     this.billets = response.data
-                    this.charged = true
+                    this.checkBillets = true
                 })
 
             //ENDPOINTS Cadeaux
@@ -116,8 +121,13 @@
                 .get('http://127.0.0.1:3333/cadeau')
                 .then(response => {
                     this.cadeaux = response.data
-                    this.charged = true
+                    this.checkCadeaux = true
                 })
+
+
+            if (this.checkBillets && this.checkCadeaux && this.checkNourriture) {
+                this.charged = true
+            }
         }
 }
 </script>
