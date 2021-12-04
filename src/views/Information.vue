@@ -55,7 +55,7 @@
                 <div class="tileCovid">
                     <div class="imgCovid imgMasque"></div>
                     <div class="titleCovid"> Port du masque </div>
-                    <div class="descCovid">Le port du masque est obligatoire lorsque vous n'êtes pas assis </div>
+                    <div class="descCovid">Le port du masque est obligatoire lorsque vous n'etes pas assis </div>
                 </div>
                 <div class="tileCovid">
                     <div class="imgCovid imgPassport"></div>
