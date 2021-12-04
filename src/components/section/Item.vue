@@ -18,7 +18,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .tileExtra {
-        
         height:3rem;
         font-size: 20px;
         display:flex;
@@ -43,6 +42,4 @@
         align-items: center;
         padding-left:1rem;
     }
-
-
 </style>
