@@ -1,7 +1,7 @@
 <template>
     <div class="tile">
         <div class="tileTop">{{ nom }}</div>
-        <div class="tileBot">{{ prix }} $</div>
+        <div class="tileBot">{{ formattedCurrencyValue }}</div>
     </div>
 </template>
 
@@ -11,6 +11,12 @@
         props: {
             nom: String,
             prix: Number
+        },
+        computed: {
+            formattedCurrencyValue: function () {
+                if (!this.prix) { return "0.00 $" }
+                return parseFloat(this.prix).toFixed(2) + " $"
+            }
         }
     }
 </script>
