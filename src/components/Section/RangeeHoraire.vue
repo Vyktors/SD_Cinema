@@ -25,7 +25,11 @@
             </tr>
             <tr class="ligne-liste-horaire">
 
-                <td><img src="@/assets/affiche-film.jpg" alt="Affiche du film" class="affiche" /></td>
+                <td>
+                    <router-link :to="{ name: 'film', params: { id: idFilm } }">
+                        <img src="@/assets/affiche-film.jpg" alt="Affiche du film" class="affiche" />
+                    </router-link>
+                </td>
                 
                 <!-- liste des horaires -->
                 <td
@@ -64,9 +68,9 @@
 export default{
     name: 'RangeeHoraire',
     props: {
-        idFilm: {
+        /*idFilm: {
             type: Number,
-        },
+        },*/
 
         /**
          * si true, on pourrait scroller horizontalement le tableau
@@ -83,6 +87,7 @@ export default{
     },
     data() {
         return {
+            idFilm: 1,
             listeHoraire: [
                 [
                     '10:30',
@@ -140,8 +145,12 @@ export default{
     height: 200px;
 }
 
-.date {
+.date,
+.liste-heure-container {
     width: 150px;
+}
+
+.date {
     height: 50px;
     display: flex;
     align-items: center;
