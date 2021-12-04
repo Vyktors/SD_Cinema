@@ -4,28 +4,44 @@
     </div>
      <!-- Afficher la rangée de film -->
             <div class="conteneur_film">
-                <div class = "film1">
-                     <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche1" />
-                      <div class="Avenir"> 4/2/2021 </div>
-                </div>
-                <div class = "film2">
-                    <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche2" />
-                    <div class="Avenir"> 25/12/2021 </div>
-                </div>
-                <div class = "film3">
-                    <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche3" />
-                     <div class="Avenir"> 2/12/2021 </div>
-                </div>
-                <div class = "film4">
-                    <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-                    <div class="Avenir"> 20/10/2021 </div>
+                <div class = "film1" v-for="film in filmAVenir" :key="film.dateSortie">
+                     <router-link :to="{name:'film', params:{ id: film.id }}">
+                         <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche1" /> 
+                         <div class="dateSortie">{{film.dateSortie}} </div>
+                     </router-link>
                 </div>
             </div>
 </template>
 
 <script>
  export default {
-        name: 'RangeeFilmAVenir',
+    name: 'RangeeFilmAVenir',
+    data: function () {
+    return {
+      filmAVenir:[
+      {
+        dateSortie:'10/10/10',
+        id: 1,
+      },
+
+      {
+        dateSortie:'11/11/11',
+        id: 2,
+      },
+
+      {
+        dateSortie:'25/12/11',
+        id: 3,
+      },
+
+      {
+        dateSortie:'15/2/11',
+        id: 4,
+      },
+
+      ]
+    }
+  },
         components: {
             
         }
@@ -48,20 +64,20 @@
     }
 
     .entête{
-        width:30%;
+        width:450px;
 		height:40px;
         background-color: #808080;
         justify-content: center;
-        margin: 0 auto;
+        margin:auto;
         border-radius: 5px 10px 0 5px;
         display: flex;
         flex-wrap: wrap;
     }
 
     img{
-        width: 110%; 
-        height: 80%;
-        margin-top: 20%; 
+        width: 220px; 
+        height: 250px;
+        margin-top: 25px; 
         flex-grow: 1;
         flex-shrink: 3;
         flex-basis: auto;
@@ -73,9 +89,9 @@
         text-transform : uppercase;
     }
 
-    .Avenir {
-        height: 5%;
-        width: 12%;
+    .dateSortie {
+        height: 45px;
+        width: 220px;
         position:absolute;
         top:600px;
         background-color:rgb(0,0,0,.6);

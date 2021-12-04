@@ -3,41 +3,10 @@
     <p> Tous les Films </p>
      <!-- Afficher la rangée de film -->
         <div class="conteneur_film">
-            <div class = "film1">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche1" />
-            </div>
-            <div class = "film2">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche2" />
-            </div>
-            <div class = "film3">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche3" />
-            </div>
-            <div class = "film4">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film5">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film6">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film7">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film8">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film9">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film10">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film11">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
-            </div>
-            <div class = "film12">
-                <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
+            <div class = "film1" v-for="film in filmVedette" :key="film.id">
+                <router-link :to="{name:'film', params:{ id: film.id }}">
+                    <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche1" /> 
+                </router-link>
             </div>
         </div>
 </template>
@@ -45,6 +14,28 @@
 <script>
  export default {
         name: 'TousLesFilms',
+        data: function () {
+    return {
+      filmVedette:[
+      {
+        id: 1,
+      },
+
+      {
+        id: 2,
+      },
+
+      {
+        id: 3,
+      },
+
+      {
+        id: 4,
+      },
+
+      ]
+    }
+    },
         components: {
             
         }
@@ -62,14 +53,11 @@
         justify-content: space-evenly;
         border-radius: 5px 10px 0 5px;
     }
-    .conteneur_film>* {
-        flex: 0 0 20.3333%;
-    }
 
     img{
-        width: 100%; 
-        height: 60%;
-        margin-top: 20%; 
+        width: 220px; 
+        height: 250px;
+        margin-top: 50px;
     }
 
     p{

@@ -4,28 +4,41 @@
     </div>
      <!-- Afficher la rangée de film -->
             <div class="conteneur_film">
-                <div class = "film1">
-                     <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche1" />
-                </div>
-                <div class = "film2">
-                    <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche2" />
-                </div>
-                <div class = "film3">
-                    <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche3" />
-                </div>
-                <div class = "film4">
-                    <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche4" />
+                <div class = "film1" v-for="film in filmVedette" :key="film.id">
+                     <router-link :to="{name:'film', params:{ id: film.id }}">
+                         <img src="@/assets/affiche-film.jpg" alt="Afficher le film" class="film__affiche1" /> 
+                     </router-link>
                 </div>
             </div>
 </template>
 
 <script>
  export default {
-        name: 'RangeeFilmVedette',
-        components: {
-            
-        }
+    name: 'RangeeFilmVedette',
+    data: function () {
+    return {
+      filmVedette:[
+      {
+        id: 1,
+      },
+
+      {
+        id: 2,
+      },
+
+      {
+        id: 3,
+      },
+
+      {
+        id: 4,
+      },
+
+      ]
     }
+    },
+    components: {}
+ }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -44,20 +57,23 @@
     }
 
     .entête{
-        width:30%;
+        width:450px;
 		height:40px;
         background-color: #808080;
         justify-content: center;
-        margin: 0 auto;
+        margin:auto;
         border-radius: 5px 10px 0 5px;
         display: flex;
-        flex-wrap:wrap;
+        flex-wrap: wrap;
     }
 
     img{
-        width: 110%; 
-        height: 80%;
-        margin-top: 20%; 
+       width: 220px; 
+        height: 250px;
+        margin-top: 25px; 
+        flex-grow: 1;
+        flex-shrink: 3;
+        flex-basis: auto; 
     }
 
     p{
