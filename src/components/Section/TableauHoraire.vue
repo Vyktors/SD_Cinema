@@ -38,7 +38,7 @@ export default {
     }
 
     .rangee-horaire-container {
-        
+        padding: 0 2rem;
     }
 
     .rangee-horaire{
