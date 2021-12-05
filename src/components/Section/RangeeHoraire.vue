@@ -21,7 +21,7 @@
             <tr class="ligne-liste-horaire">
                 <td>
 
-                    <router-link :to="{ name: 'film', params: {id: this.id} }" class="affiche__container">
+                    <router-link :to="{ name: 'film', params: {id: this.id} }" class="affiche__container" :style="{ backgroundImage: 'url(' + listeHoraire.film.img + ')' }">
 
                         <img :src="`${listeHoraire.film.img}`" alt="Affiche du film" class="affiche" />
                     </router-link>
@@ -143,6 +143,11 @@
     .overflowx{
         overflow-x: auto;
     }
+
+    .affiche {
+        visibility:hidden;
+    }
+
     .affiche,
     .film-horaire-container {
         width: 150px;
@@ -157,6 +162,11 @@
     .affiche__container {
         display:flex;
         height:100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: black;
+
     }
     .date {
         height: 50px;
@@ -165,7 +175,7 @@
         justify-content: center;
     }
 
-    .affiche,
+    .affiche__container,
     .date,
     .liste-heure-container {
         border: solid 2px white;

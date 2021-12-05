@@ -5,7 +5,7 @@
         <div class="bande">
             <div class="conteneur_films">
                 <div class="conteneur_film" v-for="film in listeFilm" :key="film.id">
-                    <router-link :to="{name:'film', params:{ id: film.id }}">
+                    <router-link :to="{name:'film', params:{ id: film.id }}" class="film_canvas" :style="{ backgroundImage: 'url(' + film.img + ')' }">
                         <img class="film" :src="`${film.img}`" alt="Afficher le film" />
                     </router-link>
                     <div v-if="wDate" class="dateSortie">{{film.date_sortie}}</div>
@@ -65,6 +65,19 @@
         flex-wrap:wrap;
     }
 
+    .film_canvas {
+        display: flex;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: black;
+        width: 188px;
+        height: 250px;
+        margin: 2rem;
+        border: 2px white solid;
+        border-radius: 5px;
+    }
     .entete {
         width:fit-content;
         min-width:250px;
@@ -79,11 +92,7 @@
     }
 
     .film{
-        margin:2rem ;
-        width: 200px; 
-        height: 250px;
-        border: 2px white solid;
-        border-radius:5px;
+       visibility:hidden;
     }
 
     .conteneur_film {
@@ -92,7 +101,7 @@
 
     .dateSortie {
         height: 45px;
-        width: 204px;
+        width: 192px;
         position: absolute;
         top: 50%;
         left: 2rem;

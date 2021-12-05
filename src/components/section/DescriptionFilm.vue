@@ -5,7 +5,7 @@
         <div class="film__apropos">
 
             <!-- Affiche -->
-            <div class="film__affiche-container">
+            <div class="film__affiche-container" :style="{ backgroundImage: 'url(' + objFilm.img + ')' }">
                 <img :src="`${objFilm.img}`" alt="Affiche du film" class="film__affiche" />
             </div>
 
@@ -117,13 +117,21 @@
         display: flex;
         justify-content: center;
         padding: 0 1rem;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        background-color: black;
+        border: white solid 2px;
+        border-radius: 5px;
     }
 
     .film__affiche {
-        width: 350px;
-        height: 400px;
-        border: white solid 2px;
-        border-radius:5px;
+        
+        width: 300px;
+        height: 450px;
+        
+        visibility:hidden;
     }
 
     .film__icon {
@@ -132,7 +140,7 @@
     }
 
     .film__description {
-        padding: 0 1rem;
+        padding: 0 2rem;
         display:flex;
         flex-direction:column;
         justify-content:space-between;
