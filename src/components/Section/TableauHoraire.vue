@@ -43,6 +43,8 @@ export default {
 
     .rangee-horaire{
         margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
     }
 
     @media (max-width:1250px) {
