@@ -134,51 +134,58 @@
 </script>
 
 <style scoped>
-.overflowx{
-    overflow-x: auto;
-}
-.affiche,
-.film-horaire-container {
-    width: 150px;
-    height: 200px;
-}
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding:0 2rem;
+    }
+    .overflowx{
+        overflow-x: auto;
+    }
+    .affiche,
+    .film-horaire-container {
+        width: 150px;
+        height: 200px;
+    }
 
-.date,
-.liste-heure-container {
-    width: 150px;
-}
+    .date,
+    .liste-heure-container {
+        width: 150px;
+    }
 
-.affiche__container {
-    display:flex;
-    height:100%;
-}
-.date {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .affiche__container {
+        display:flex;
+        height:100%;
+    }
+    .date {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.affiche,
-.date,
-.liste-heure-container {
-    border: solid 2px white;
-    border-radius: 5px;
-}
+    .affiche,
+    .date,
+    .liste-heure-container {
+        border: solid 2px white;
+        border-radius: 5px;
+    }
 
-.liste-heure-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
+    .liste-heure-container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
 
-.liste-vide {
-    justify-content: center;
-}
+    .liste-vide {
+        justify-content: center;
+    }
 
-.highlight {
-    border: solid 4px #fece00;
-}
+    .highlight {
+        border: solid 4px #fece00;
+        box-sizing: border-box;
+    }
 
     .horaire-journalier {
         display: flex;
@@ -192,5 +199,8 @@
         display: flex;
         justify-content:center;
         font-size:20px;
+    }
+    @media (max-width:800px) {
+
     }
 </style>

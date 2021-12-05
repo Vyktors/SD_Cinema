@@ -11,16 +11,17 @@
 
             <!-- Description du film -->
             <div class="film__description">
-
-                <!-- Titre et resume-->
-                <div class="film__titre">
-                    <h2>{{objFilm.titre}}</h2><div class="film__genre">| {{objFilm.genre.nom}}</div>
+                <div class="film__desc__text">
+                    <!-- Titre et resume-->
+                    <div class="film__titre">
+                        <h1>{{objFilm.titre}}</h1><div class="film__genre">&nbsp;| {{objFilm.genre.nom}}</div>
+                    </div>
+                    <div class="film__resume">
+                        {{objFilm.description}}
+                    </div>
                 </div>
-                <div class="film__resume">
-                    {{objFilm.description}}
-                </div>
-
-                <div class="film__duree-realisateur">
+                <div class="film__desc__stat">
+                    
                     <!-- duree -->
                     <div class="film__duree-container">
                         <div class="film__icon-container">
@@ -40,17 +41,20 @@
                             {{objFilm.realisateur}}
                         </div>
                     </div>
+                    
+
+                    <!-- Acteur -->
+                    <div class="film__acteur-container">
+                        <div class="film__icon-container">
+                            <i class="material-icons">groups</i>
+                        </div>
+                        <div class="film__acteur">
+                            {{objFilm.acteur}}
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Acteur -->
-                <div class="film__acteur-container">
-                    <div class="film__icon-container">
-                        <i class="material-icons">groups</i>
-                    </div>
-                    <div class="film__acteur">
-                        {{objFilm.acteur}}
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div class="film__horaire">
@@ -95,19 +99,31 @@
 <style scoped>
     .film__container {
         width: 100%;
-        margin-top: 30px;
+        margin-top: 5rem;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction:column;
     }
 
     .film__apropos {
+        padding: 0 2rem;
         display: flex;
         justify-content: center;
-        align-items: center;
+        max-width: 1440px;
+    }
+
+    .film__affiche-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 1rem;
     }
 
     .film__affiche {
         width: 350px;
         height: 400px;
-        margin-right: 20px;
+        border: white solid 2px;
+        border-radius:5px;
     }
 
     .film__icon {
@@ -116,64 +132,82 @@
     }
 
     .film__description {
-        margin-left: 2em;
+        padding: 0 1rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        font-size:20px;
     }
     .film__titre {
         display:flex;
-        align-items:center;
-
+        flex-wrap:wrap;
+        align-items:flex-end;
+        margin:0 0 1rem;
     }
-    .film__titre h2{
-        padding: 0 1rem 0 0;
+    .film__titre h1{
+        margin:0;
     }
 
     .film__genre {
         opacity: 0.8;
-        font-size: 20px;
+        font-size: 26px;
+        padding-bottom:6px;
     }
     .film__resume {
-        max-width: 750px;
-        min-width: 600px;
         min-height: 100px;
         margin-bottom: 20px;
         text-align: left;
     }
 
-    .film__duree-realisateur,
+    .film__desc__text {
+
+    }
+
+    .film__desc__stat {
+    }
+
     .film__realisateur-container,
     .film__duree-container,
     .film__acteur-container {
         display: flex;
         align-items: center;
+        margin:1rem 2rem 0 0;
+
     }
 
     .film__realisateur-container {
-        margin-right: 10px;
-        margin-left: auto;
+
     }
 
     .film__icon-container {
-        margin-right: 5px;
+        margin-right: 1rem;
     }
 
-    
-
     .film__horaire {
-        height: 400px;
+        width:100%;
+        max-width:1440px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 4rem 0;
     }
 
+    .material-icons {
+        font-size: 36px;
+        display:flex;
+        align-items:center;
+    }
     @media (max-width:800px) {
-        .film__apropos {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+        .container{
+            justify-content: flex-start;
         }
 
-        .film__description {
-            margin-left: auto;
+        .film__apropos {
+            flex-direction:column;
+        }
+
+        .film__affiche-container {
+            margin-bottom: 2rem;
         }
     }
 </style>
