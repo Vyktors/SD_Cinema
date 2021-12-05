@@ -110,6 +110,7 @@
         padding: 0 2rem;
         display: flex;
         justify-content: center;
+        align-items:center;
         max-width: 1440px;
     }
 
@@ -124,14 +125,13 @@
         background-color: black;
         border: white solid 2px;
         border-radius: 5px;
+        width: 300px;
+        max-height: 450px;
     }
 
     .film__affiche {
-        
-        width: 300px;
-        height: 450px;
-        
-        visibility:hidden;
+        max-height: 450px;
+        visibility: hidden;
     }
 
     .film__icon {
@@ -213,6 +213,9 @@
 
         .film__affiche-container {
             margin-bottom: 2rem;
+        }
+        .film__affiche {
+            max-width:100%;
         }
     }
 </style>

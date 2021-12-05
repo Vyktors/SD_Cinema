@@ -92,7 +92,7 @@
     }
 
     .film{
-       visibility:hidden;
+       display:none;
     }
 
     .conteneur_film {
