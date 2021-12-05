@@ -206,16 +206,21 @@
         align-items:center;
     }
     @media (max-width:800px) {
-        
+
         .film__apropos {
-            flex-direction:column;
+            flex-direction: column;
         }
 
         .film__affiche-container {
             margin-bottom: 2rem;
+            width: 100%;
+            max-height: 100%;
         }
+
         .film__affiche {
-            max-width:100%;
+            min-height:200px;
+            min-width: 100%;
+            width: 100px
         }
     }
 </style>

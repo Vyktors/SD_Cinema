@@ -4,17 +4,12 @@
         <div class="navigation">
             <router-link to="/" class="nav-item"><span class="material-icons">date_range</span> HORAIRE</router-link>
             <router-link :to="{name:'films'}" class="nav-item"><span class="material-icons">movie</span> FILMS</router-link>
-            <router-link :to="{name:'information'}" class="dropdown-hover">
-                <button class="nav-btn" title="More">
+            <router-link :to="{name:'information'}" class="nav-item">
+                
                     <span class="material-icons">info</span> INFORMATIONS
-                    <span class="material-icons">arrow_drop_down</span>
-                </button>
-                <div class="dropdown-content">
-                    <router-link :to="{name:'information', hash:'#billetterie'}" class="bar-item">BILLETERIE</router-link>
-                    <router-link :to="{name:'information', hash:'#carte-cadeau'}" class="bar-item">CARTE CADEAU</router-link>
-                    <router-link :to="{name:'information', hash:'#nourriture'}" class="bar-item">NOURRITURE</router-link>
-                    <router-link :to="{name:'information', hash:'#covid-19'}" class="bar-item">COVID-19</router-link>
-                </div>
+                    
+                
+                
             </router-link>
         </div>
 
