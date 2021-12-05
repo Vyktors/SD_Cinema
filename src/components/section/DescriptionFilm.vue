@@ -107,7 +107,6 @@
     }
 
     .film__apropos {
-        padding: 0 2rem;
         display: flex;
         justify-content: center;
         align-items:center;
@@ -126,7 +125,7 @@
         border: white solid 2px;
         border-radius: 5px;
         width: 300px;
-        max-height: 450px;
+        height: 450px;
     }
 
     .film__affiche {
@@ -213,14 +212,15 @@
 
         .film__affiche-container {
             margin-bottom: 2rem;
-            width: 100%;
-            max-height: 100%;
+            width: auto;
+            height:auto;
+            
         }
 
         .film__affiche {
-            min-height:200px;
-            min-width: 100%;
-            width: 100px
+            min-height:350px;
+            min-width: 225px;
+            width: 100px;
         }
     }
 </style>
