@@ -6,7 +6,7 @@
 
             <!-- Affiche -->
             <div class="film__affiche-container">
-                <img src="@/assets/affiche-film.jpg" alt="Affiche du film" class="film__affiche" />
+                <img :src="`${objFilm.img}`" alt="Affiche du film" class="film__affiche" />
             </div>
 
             <!-- Description du film -->
@@ -14,7 +14,7 @@
 
                 <!-- Titre et resume-->
                 <div class="film__titre">
-                    <h2>{{objFilm.titre}}</h2>
+                    <h2>{{objFilm.titre}}</h2><div class="film__genre">| {{objFilm.genre.nom}}</div>
                 </div>
                 <div class="film__resume">
                     {{objFilm.description}}
@@ -57,6 +57,7 @@
             <RangeeHoraire
                 :overflowx="true"
                 :show-date="true"
+                :listeHoraire="horaire"
             />
         </div>
     </div>
@@ -64,12 +65,27 @@
 
 <script>
     import RangeeHoraire from '@/components/section/RangeeHoraire';
+    import axios from 'axios';
 
     export default {
         name: 'DescriptionFilm',
         components: { RangeeHoraire },
         props: {
             objFilm: Object
+        },
+        data() {
+            return {
+                horaire: Object,
+                charged: false,
+            }
+        },
+        created() {
+            axios
+                .get('http://127.0.0.1:3333/horaire/' + this.objFilm.id)
+                .then(response => {
+                    (this.horaire = response.data)
+                    this.charged = true
+                })
         }
     }
 </script>
@@ -101,7 +117,19 @@
     .film__description {
         margin-left: 2em;
     }
+    .film__titre {
+        display:flex;
+        align-items:center;
 
+    }
+    .film__titre h2{
+        padding: 0 1rem 0 0;
+    }
+
+    .film__genre {
+        opacity: 0.8;
+        font-size: 20px;
+    }
     .film__resume {
         max-width: 750px;
         min-width: 600px;
@@ -126,6 +154,8 @@
     .film__icon-container {
         margin-right: 5px;
     }
+
+    
 
     .film__horaire {
         height: 400px;
