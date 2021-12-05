@@ -14,14 +14,14 @@
             <h2 id="billetterie">- Billeterie -</h2>
         </div>
         <div class="container">
-            <TableauTarif />
+            <TableauTarif :list="billets.main"/>
         </div>
 
         <div class="title">
-            <h2>- Tarif reduit -</h2>
+            <h2>- Tarifs speciaux -</h2>
         </div>
         <div class="container">
-            <ListeItem />
+            <ListeItem :list="billets.extra"/>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
             <h2 id="carte-cadeau">- Carte cadeau -</h2>
         </div>
         <div class="container">
-            <CarteCadeaux/>
+            <CarteCadeaux :cadeaux="cadeaux"/>
         </div>
     </div>
 
@@ -90,16 +90,44 @@
         data() {
             return {
                 bouffe: [],
+                billets: [],
+                cadeaux: [],
+                checkNourriture: false,
+                checkBillets: false,
+                checkCadeaux: false,
                 charged: false
             }
         },
         created() {
+
+            //ENDPOINTS Nourriture
             axios
-                .get('http://127.0.0.1:3333/') //Need good ENDPOINT Pour la bouffe
+                .get('http://127.0.0.1:3333/nourriture') 
                 .then(response => {
                     (this.bouffe = response.data)
-                    this.charged = true
+                    this.checkNourriture = true
                 })
+
+            //ENDPOINTS Tarifs
+            axios
+                .get('http://127.0.0.1:3333/billets') 
+                .then(response => {
+                    this.billets = response.data
+                    this.checkBillets = true
+                })
+
+            //ENDPOINTS Cadeaux
+            axios
+                .get('http://127.0.0.1:3333/cadeau')
+                .then(response => {
+                    this.cadeaux = response.data
+                    this.checkCadeaux = true
+                })
+
+
+            if (this.checkBillets && this.checkCadeaux && this.checkNourriture) {
+                this.charged = true
+            }
         }
 }
 </script>
@@ -143,6 +171,7 @@
     .container {
         max-width:1440px;
         min-height:50px;
+        width:100%;
     }
 
     .tabCovid {

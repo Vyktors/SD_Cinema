@@ -20,23 +20,12 @@
 </script>
 <style>
 
-    /*TODO*/
-    @font-face {
-        font-family: 'Sora';
-        src: url(/style/font/Sora/static/Sora-Regular.ttf);
-    }
-
-    @font-face {
-        font-family: 'Sora-bold';
-        src: url(/style/font/Sora/static/Sora-Bold.ttf);
-        font-weight: bold;
-    }
-    /*ENDTODO*/
+    @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
 
     body,
     button {
-        font-family: 'Sora', sans-serif;
+        font-family:'Sora', sans-serif;
     }
 
     html,

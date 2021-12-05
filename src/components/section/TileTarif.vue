@@ -1,13 +1,23 @@
 <template>
     <div class="tile">
-        <div class="tileTop">Nom du groupe de tarif</div>
-        <div class="tileBot">50$</div>
+        <div class="tileTop">{{ nom }}</div>
+        <div class="tileBot">{{ formattedCurrencyValue }}</div>
     </div>
 </template>
 
 <script>
     export default {
         name: 'TileTarif',
+        props: {
+            nom: String,
+            prix: Number
+        },
+        computed: {
+            formattedCurrencyValue: function () {
+                if (!this.prix) { return "0.00 $" }
+                return parseFloat(this.prix).toFixed(2) + " $"
+            }
+        }
     }
 </script>
 
