@@ -43,9 +43,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div v-else
+                    <div v-else :class="{ 'highlight': index == 0}"
                          class="liste-heure-container liste-vide">
-                        <i class="material-icons rangee-horaire__no-horaire">hide_source</i>
+                        <i class="material-icons rangee-horaire__no-horaire" >hide_source</i>
                     </div>
                 </td>
             </tr>
