@@ -15,7 +15,7 @@
             Item,
         },
         props: {
-            list: Array,
+            list: Object,
         }
     }
 </script>

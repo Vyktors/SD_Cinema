@@ -1,14 +1,14 @@
 <template>
     <div class="tableau-horaire-container">
-        <div
-            class="rangee-horaire-container"
-        >
+        <div class="rangee-horaire-container">
             <div
                 v-for="film, index in listeFilm"
                 :key="index"
                 class="rangee-horaire">
                <RangeeHoraire
                     :show-date="index === 0"
+                    :listeHoraire="film"
+                    :id="film.film.id"
                 />
             </div>
         </div>
@@ -19,15 +19,15 @@
 import RangeeHoraire from '@/components/section/RangeeHoraire.vue'
 
 export default {
-    name: 'TableauHoraire',
-
-    props: {
-        listeFilm: {
-            type: Object,
+        name: 'TableauHoraire',
+        props: {
+            listeFilm: {
+                type: Object,
+            },
         },
-    },
-
-    components: { RangeeHoraire },
+        components: {
+            RangeeHoraire
+        },
 }
 </script>
 

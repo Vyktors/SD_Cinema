@@ -54,10 +54,11 @@
             </div>
         </div>
         <div class="film__horaire">
-            <RangeeHoraire
+            <RangeeHoraire v-if="charged"
                 :overflowx="true"
                 :show-date="true"
                 :listeHoraire="horaire"
+                :id="objFilm.id"
             />
         </div>
     </div>
