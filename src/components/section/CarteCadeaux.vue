@@ -5,6 +5,7 @@
             v-bind:key="index"
             :nom="item.nom"
             :prix="item.prix"
+            :img="item.img"
             />
     </div>
 </template>

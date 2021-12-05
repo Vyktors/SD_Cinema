@@ -1,6 +1,6 @@
 <template>
     <div class="ccTile">      
-        <img class="ccImg" :src="'${ img }'">
+        <img class="ccImg" :src="`${ img }`">
         <div class="ccNom"> {{ nom }} </div>
         <div class="ccPrix">{{ formattedCurrencyValue }}</div>
     </div>

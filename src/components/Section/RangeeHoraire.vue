@@ -177,7 +177,7 @@
 }
 
 .highlight {
-    border: solid 2px #fece00;
+    border: solid 4px #fece00;
 }
 
     .horaire-journalier {

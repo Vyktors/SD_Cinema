@@ -1,12 +1,7 @@
 <template>
-    <div class="contFull">
-        <div class="title">
-            <h1>Informations</h1>
-        </div>
-        <div class="textHeader">
-            Vous trouverez ci-dessous toutes les informations pour votre aventure!
-        </div>
-    </div>
+    <TitrePage
+                :titre="'Informations'"
+                :description="'Vous trouverez ci-dessous toutes les informations pour votre aventure!'"/>
 
     <!--BILLETERIE-->
     <div class="contFull odd">
@@ -14,14 +9,14 @@
             <h2 id="billetterie">- Billeterie -</h2>
         </div>
         <div class="container">
-            <TableauTarif :list="billets.main"/>
+            <TableauTarif v-if="checkBillets" :list="billets.main"/>
         </div>
 
         <div class="title">
             <h2>- Tarifs speciaux -</h2>
         </div>
         <div class="container">
-            <ListeItem :list="billets.extra"/>
+            <ListeItem v-if="checkBillets" :list="billets.extra"/>
         </div>
     </div>
 
@@ -31,7 +26,7 @@
             <h2 id="carte-cadeau">- Carte cadeau -</h2>
         </div>
         <div class="container">
-            <CarteCadeaux :cadeaux="cadeaux"/>
+            <CarteCadeaux v-if="checkCadeaux" :cadeaux="cadeaux"/>
         </div>
     </div>
 
@@ -41,7 +36,7 @@
             <h2 id="nourriture">- Nourriture -</h2>
         </div>
         <div class="container">
-            <ListeItem :list="bouffe" />
+            <ListeItem v-if="checkNourriture" :list="bouffe" />
         </div>
     </div>
 
@@ -76,6 +71,7 @@
 <script>
     import axios from 'axios';
 
+    import TitrePage from '@/components/section/TitrePage.vue'
     import TableauTarif from '@/components/section/TableauTarif.vue';
     import ListeItem from '@/components/section/ListeItem.vue';
     import CarteCadeaux from '@/components/section/CarteCadeaux.vue';
@@ -85,7 +81,8 @@
         components: {
             TableauTarif,
             ListeItem,
-            CarteCadeaux
+            CarteCadeaux,
+            TitrePage
         },
         data() {
             return {
@@ -123,11 +120,6 @@
                     this.cadeaux = response.data
                     this.checkCadeaux = true
                 })
-
-
-            if (this.checkBillets && this.checkCadeaux && this.checkNourriture) {
-                this.charged = true
-            }
         }
 }
 </script>

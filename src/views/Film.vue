@@ -1,15 +1,18 @@
 <template>
+    <TitrePage :titre="film.titre"
+               :description="'Vous trouverez ci-dessous toutes les informations pour votre aventure!'" />
     <DescriptionFilm v-if="charged" :objFilm="film" />
 </template>
 
 <script>
     import axios from 'axios';
     import DescriptionFilm from "@/components/section/DescriptionFilm.vue";
-
+    import TitrePage from '@/components/section/TitrePage.vue'
     export default {
         name: 'Film',
         components: {
             DescriptionFilm,
+            TitrePage
         },
         data() {
             return {

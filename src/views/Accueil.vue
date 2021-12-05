@@ -1,17 +1,19 @@
 <template>
-    <TableauHoraire
-        :liste-film="listeFilm"
-    />
+    <TitrePage :titre="'Bienvenue chez Cinema'"
+               :description="`Ci-dessous l'horaire de la semaine`" />
+    <TableauHoraire :liste-film="listeFilm" />
 </template>
 
 <script>
     import axios from 'axios';
+    import TitrePage from '@/components/section/TitrePage.vue'
     import TableauHoraire from "@/components/section/TableauHoraire.vue"
     export default {
         name: 'Acceuil',
 
         components: {
-            TableauHoraire
+            TableauHoraire,
+            TitrePage
         },
         data() {
             return {

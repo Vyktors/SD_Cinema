@@ -39,6 +39,7 @@
         border-right: 2px solid #fece00;
         padding-right:1rem;
         margin:6px 0;
+        text-align:right;
     }
 
     .tileExtraRight {
