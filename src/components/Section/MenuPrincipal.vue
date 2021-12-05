@@ -31,8 +31,8 @@
                 <ul id="menu">
                     <div class="menuTitle">MENU</div>
                     <li><router-link to="/" class="nav-item-mobile"><div class="material-icons">date_range</div> HORAIRE</router-link></li>
-                    <li><router-link to="/films" class="nav-item-mobile"><div class="material-icons">movie</div> FILMS</router-link></li>
-                    <li><router-link to="/information" class="nav-item-mobile"><div class="material-icons">info</div> INFORMATIONS</router-link></li>
+                    <li><router-link :to="{name:'films'}" class="nav-item-mobile"><div class="material-icons">movie</div> FILMS</router-link></li>
+                    <li><router-link :to="{name:'information'}" class="nav-item-mobile"><div class="material-icons">info</div> INFORMATIONS</router-link></li>
                 </ul>
             </div>
         </div>
@@ -236,6 +236,7 @@ export default {
             }
 
         #menu {
+            display: none;
             visibility: hidden;
             opacity: 0;
             position: absolute;
