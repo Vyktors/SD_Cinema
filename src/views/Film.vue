@@ -1,5 +1,5 @@
 <template>
-    <DescriptionFilm v-if="charged" :objFilm="films.find(a=>a.id == $route.params.id)" />
+    <DescriptionFilm v-if="charged" :objFilm="film" />
 </template>
 
 <script>
@@ -13,15 +13,15 @@
         },
         data() {
             return {
-                films: [],
+                film: Object,
                 charged: false,
             }
         },
         created() {
             axios
-                .get('http://127.0.0.1:3333/')
+                .get('http://127.0.0.1:3333/film/'+ this.$route.params.id)
                 .then(response => {
-                    (this.films = response.data)
+                    (this.film = response.data)
                     this.charged = true
                 })
         }
