@@ -4,16 +4,8 @@
         <div class="navigation">
             <router-link to="/" class="nav-item"><span class="material-icons">date_range</span> HORAIRE</router-link>
             <router-link :to="{name:'films'}" class="nav-item"><span class="material-icons">movie</span> FILMS</router-link>
-            <router-link :to="{name:'information'}" class="nav-item">
-                
-                    <span class="material-icons">info</span> INFORMATIONS
-                    
-                
-                
-            </router-link>
+            <router-link :to="{name:'information'}" class="nav-item"><span class="material-icons">info</span> INFORMATIONS</router-link>
         </div>
-
-
 
         <div class="navigation-mobile">
             <div id="menuToggle">
@@ -83,21 +75,9 @@ export default {
         align-items: center;
     }
 
-    .nav-btn {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        font-size: 16px;
-        height: 100%;
-        width: 100%;
-    }
+   
 
-    .nav-btn:hover,
-    .bar-item:hover,
     .nav-item:hover,
-    .nav-btn:focus-within,
-    .bar-item:focus-within,
     .nav-item:focus-within {
         color: white;
         background-color: #43484b;
@@ -106,42 +86,6 @@ export default {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
     }
 
-    .dropdown-hover {
-        height: 100%;
-        width: 30%;
-        min-width: 12rem;
-        display: block;
-        position: static;
-    }
-
-    .dropdown-hover:hover,
-    .dropdown-hover:focus,
-    .dropdown-hover:focus-within {
-        background-color: #43484b;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
-    }
-
-    .dropdown-hover:hover .dropdown-content,
-    .dropdown-hover:focus .dropdown-content,
-    .dropdown-hover:focus-within .dropdown-content {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .dropdown-content {
-        display: none;
-        align-items: left;
-        background-color: black;
-        position: relative;
-    }
-
-    .bar-item {
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
     .material-icons {
         margin-right: 3px;
