@@ -38,10 +38,17 @@ export default {
     }
 
     .rangee-horaire-container {
-        overflow-x: auto;
+        
     }
 
     .rangee-horaire{
         margin-bottom: 1rem;
+    }
+
+    @media (max-width:1250px) {
+
+        .rangee-horaire-container {
+            overflow-x: auto;
+        }
     }
 </style>
