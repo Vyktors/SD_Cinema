@@ -15,9 +15,7 @@
 
 <script>
  export default {
-        name: 'RangeeFilm',
-        data: function () { },
-    
+        name: 'RangeeFilm',    
         props: {
             titre: {
                 type: String,
