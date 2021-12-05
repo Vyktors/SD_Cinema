@@ -198,10 +198,7 @@
         align-items:center;
     }
     @media (max-width:800px) {
-        .container{
-            justify-content: flex-start;
-        }
-
+        
         .film__apropos {
             flex-direction:column;
         }

@@ -32,16 +32,16 @@ export default {
 </script>
 
 <style scoped>
-.tableau-horaire-container {
-    display: flex;
-    justify-content: center;
-}
+    .tableau-horaire-container {
+        display: flex;
+        justify-content: center;
+    }
 
-.rangee-horaire-container {
-    overflow-x: auto;
-}
+    .rangee-horaire-container {
+        overflow-x: auto;
+    }
 
-.rangee-horaire{
-    margin-bottom: 1rem;
-}
+    .rangee-horaire{
+        margin-bottom: 1rem;
+    }
 </style>

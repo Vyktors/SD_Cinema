@@ -200,7 +200,11 @@
         justify-content:center;
         font-size:20px;
     }
-    @media (max-width:800px) {
+    @media (max-width:1250px) {
+
+        .container {
+            justify-content: flex-start;
+        }
 
     }
 </style>
