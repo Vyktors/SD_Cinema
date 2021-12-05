@@ -21,6 +21,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
+        padding: 0 2rem ;
     }
     .textHeader {
         display: flex;
