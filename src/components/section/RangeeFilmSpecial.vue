@@ -68,7 +68,7 @@
     .entete {
         width:fit-content;
         min-width:250px;
-        padding:1rem;
+        padding:1rem 2rem;
         background-color: #43484b;
         justify-content: center;
         align-items:center;
