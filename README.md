@@ -17,7 +17,7 @@ If it doesnt work, see Troubleshooting below ⬇
 
 ### `vuejs` is not correctly installed
 
-After the npm install, if you use the command `vue -V`, you should get the current VueJS version you're using. If not, scripts are may be disable on your OS. Solution:
+After the npm install, if you use the command `vue -V`, you should get the current VueJS version you're using. If not, scripts may be disable on your OS. Solution:
 
  - Open Powershell as administrator
  - run `set-executionpolicy unrestricted`
